@@ -1,0 +1,26 @@
+<%- include('partials/header', { title: p.name }) %>
+
+<section class="section">
+  <div class="container">
+    <div class="product-detail">
+      <div class="pd-left">
+        <div class="pd-thumb">
+          <img src="<%= p.image %>" alt="<%= p.name %>">
+        </div>
+      </div>
+      <div class="pd-right">
+        <h1><%= p.name %></h1>
+        <div class="pd-price">$<%= asMoney(p.price) %></div>
+        <p class="pd-desc"><%= p.description || '' %></p>
+
+        <form action="#" method="post" onsubmit="alert('Checkout coming soon');return false;">
+          <button class="btn primary" type="submit">Buy Now</button>
+        </form>
+
+        <p class="muted" style="margin-top:12px">Ships from VoltStore. Support included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
